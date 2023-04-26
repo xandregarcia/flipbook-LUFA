@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en" class="noie">
+<head>
+<title>PGLU FlipBook</title>
+<meta name="viewport" content="width=1200" />
+<meta name="keywords" content="page,flip,pages,effect,flipbook,flipboard,jquery,html5,book,magazine,newspaper,ipad,iphone,android,ios" />
+<meta name="description" content="Turn.js makes a beautiful page turning effect using HTML5 and jQuery" />
+<link rel="icon" type="image/png" href="pics/favicon.png" />
+<link type="text/css" rel="stylesheet" href="css/jquery.ui.css"></link>
+<link type="text/css" rel="stylesheet" href="css/default.css"></link>
+<script type="text/javascript" src="extras/all.js"></script>
+<script type="text/javascript" src="lib/hash.js"></script>
+<script type="text/javascript" src="lib/turn.min.js"></script>
+<script type="text/javascript" src="lib/zoom.min.js"></script>
+<script type="text/javascript" src="lib/bookshelf.js"></script>
+</head>
+<body  style="overflow: hidden">
+	<div class="preloader">
+		<!-- <div class="loadingtitle">LOADING</div> -->
+		<div class="preloader-progress">
+			<img class="dot" src="/samples/html5/pics/flower.png" alt="flower" />
+			<img class="dot" src="/samples/html5/pics/flower.png" alt="flower" />
+			<img class="dot" src="/samples/html5/pics/flower.png" alt="flower" />
+			<img class="dot" src="/samples/html5/pics/flower.png" alt="flower" />
+			<img class="dot" src="/samples/html5/pics/flower.png" alt="flower" />
+		</div>
+	</div>
+<section class="splash">
+	<video class="video-bg" autoplay muted loop>
+		<source src="/samples/html5/pics/video/LUFA-trailer.mp4" type="video/mp4" />
+	</video>
+	<div class="center">
+	<div class="details">
+		<!-- <i class="turnjs"></i> -->
+		<h1>LUFA</h1>
+		<ul>
+			<li>La Union Foundation Anniversary</li>
+			<li>FlipBook</li>
+			<!-- <li title="Minimized and Gzipped">Lightweight, 10K</li> -->
+		</ul>
+	</div>
+
+	<div class="bookshelf">
+		<div class="shelf">
+			<div class="row-1">
+				<div class="loc">
+					<div> <div class="sample thumb2" sample="html5"></div> </div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+<!-- Samples-->
+	<div class="samples">
+		<div class="bar">
+			<a class="icon quit"></a>
+		</div>
+		<div id="book-wrapper">
+			<div id="book-zoom"></div>
+		</div>
+		<div id="slider-bar" class="turnjs-slider">
+			<div id="slider"></div>
+		</div>
+
+	</div>
+
+<!-- End samples -->
+
+</div>
+<div class="gradient"></div>
+</section>
+
+
+<!-- </div> -->
+
+<footer>
+	&copy;2023 All rights reserved - Powered by <a href="http://twitter.com/blasten" target="_blank">LTMU</a>
+</footer>
+<script src="/samples/html5/js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script type="text/javascript">
+
+//1953 360
+
+yepnope({
+	test : Modernizr.csstransforms,
+	nope : ['lib/turn.html4.min.js', 'css/jquery.ui.html4.css']
+});
+
+$('#sample-viewer a').click(function() {
+	$(this).hide();
+	yepnope({
+		test : Modernizr.csstransforms,
+		load: ['samples/basic/js/basic.js', 'samples/basic/css/basic.css'],
+		nope: 'samples/basic/css/basic.html4.css?'+Math.round(Math.random()*100)
+	});
+});
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-28960832-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</body>
+</html>
